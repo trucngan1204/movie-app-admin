@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { layDanhSachNguoiDungAction, xoaNguoiDungAction } from '../../../redux/actions/QuanLyNguoiDungAction';
+import { layDanhSachNguoiDungAction, timKiemNguoiDungAction, xoaNguoiDungAction } from '../../../redux/actions/QuanLyNguoiDungAction';
 import { EditOutlined, SearchOutlined, DeleteOutlined} from '@ant-design/icons';
 import { Button, Table } from 'antd';
 import { Input } from 'antd';
@@ -119,7 +119,7 @@ export default function Dashboard(props) {
     const onSearch = value => {
 
         console.log(value);
-        dispatch(layDanhSachNguoiDungAction(value));
+        dispatch(timKiemNguoiDungAction(value));
 
     };
 
@@ -138,7 +138,7 @@ export default function Dashboard(props) {
             }}>Thêm người dùng</Button>
             <Search
                 className="mb-5"
-                placeholder="Họ tên,..."
+                placeholder="Từ khoá"
                 enterButton={<SearchOutlined />}
                 size="large"
 

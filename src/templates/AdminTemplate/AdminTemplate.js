@@ -85,19 +85,20 @@ const AdminTemplate = (props) => { //path, exact, Component
     const operations = <Fragment>
         {!_.isEmpty(userLogin) ? <Fragment> <button onClick={() => {
             // history.push('/profile')
-        }}> <div style={{ font:'30px', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
-                {/* // className="text-2xl ml-5 rounded-full bg-red-200"> */}
+        }}> <div style={{ fontSize:'17px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight:'50px' }} >
+                {/* {className="text-2xl ml-5 rounded-full bg-red-200"} */}
                 {/* {userLogin.taiKhoan.substr(0, 1)} */}
                 {userLogin.taiKhoan}
             </div>
                 
             </button> 
-            <button onClick={() => {
+            <button className="btn btn-light" style={{fontSize:'17px'}} onClick={() => {
                 localStorage.removeItem(USER_LOGIN);
                 localStorage.removeItem(TOKEN);
                 history.push('/');
                 window.location.reload();
-        }} className="text-black-800">Đăng xuất</button> </Fragment> : ''}
+        }}>Đăng xuất</button> </Fragment> : ''}
+
     </Fragment>
 
     return <Route {...restProps} render={(propsRoute) => { //props.location,props.history,props.match

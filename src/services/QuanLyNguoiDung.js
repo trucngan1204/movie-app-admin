@@ -29,7 +29,14 @@ export class QuanLyNguoiDungService  extends baseService{
     capNhatNguoiDung = (formData) => {
         return this.post(`/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung`,formData);
     }
-  
+    timKiemNguoiDung =(tuKhoa ='')=>{
+        if(tuKhoa.trim()!='')
+        {
+            return this.get(`/api/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=${GROUPID}&tuKhoa=${tuKhoa}`)
+        }
+        return this.get(`/api/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=${GROUPID}`)
+        
+    }
 }
 
 

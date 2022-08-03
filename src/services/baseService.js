@@ -1,23 +1,6 @@
 import Axios from "axios"
 import { DOMAIN, TOKEN, TokenCyberSoft, TOKEN_CYBERSOFT } from '../util/settings/config'
 
-// const http = Axios.create({
-//     baseURL: DOMAIN,
-//     timeout: 30000,
-// })
-
-// http.interceptors.request.use((config) => {
-//     config.headers = {
-//         ...config.headers,
-//         'accept': 'application/json',
-//         // 'Access-Control-Allow-Origin':'*',
-//         'TokenCyberSoft': TOKEN_CYBERSOFT,
-//         'Authorization': `${localStorage.getItem() ? 'Bearer ' + localStorage.getItem(TOKEN) : ''}`   //Token mà người dùng đăng nhập
-//     }
-//     return config
-// }, (errors) => {
-//     return Promise.reject(errors)
-// })
 
 export class baseService {
     constructor() {

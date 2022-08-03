@@ -1,5 +1,5 @@
 import { quanLyNguoiDungService } from "../../services/QuanLyNguoiDung"
-import { DANG_NHAP_ACTION, SET_DANH_SACH_NGUOI_DUNG, SET_THONG_TIN_NGUOI_DUNG } from "./types/QuanLyNguoiDungType";
+import { DANG_NHAP_ACTION, SET_DANH_SACH_NGUOI_DUNG, SET_THONG_TIN_NGUOI_DUNG, SET_TIM_KIEM_NGUOI_DUNG } from "./types/QuanLyNguoiDungType";
 import { history } from '../../App'
 import { TOKEN, TYPE_USER, USER_LOGIN } from "../../util/settings/config";
 import Swal from 'sweetalert2'
@@ -31,6 +31,8 @@ export const dangNhapAction = (thongTinDangNhap) => {
     }
 
 }
+ 
+
 export const layDanhSachNguoiDungAction = (taiKhoan = '') => {
 
 
@@ -49,6 +51,23 @@ export const layDanhSachNguoiDungAction = (taiKhoan = '') => {
         }
     };
 }
+
+export const timKiemNguoiDungAction = (tuKhoa ='')=>{
+
+    return async(dispatch)=>{
+        try {
+            const result = await quanLyNguoiDungService.timKiemNguoiDung(tuKhoa);
+
+            dispatch({
+                type:SET_TIM_KIEM_NGUOI_DUNG,
+                arrUser:result.data.content
+            })
+        }catch(errors){
+            console.log('errors', errors)
+        }
+    };
+}
+
 export const xoaNguoiDungAction = (taiKhoan) => {
 
 
