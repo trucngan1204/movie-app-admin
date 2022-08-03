@@ -15,7 +15,7 @@ import { TYPE_USER, USER_LOGIN } from '../../util/settings/config';
 export default function Login() {
     const dispatch = useDispatch();
     const {userLogin} = useSelector(state => state.QuanLyNguoiDungReducer)
-    console.log(userLogin);
+    // console.log(userLogin);
     const formik = useFormik({
         initialValues: {
             taiKhoan: '',

@@ -4,11 +4,11 @@ import { DOMAIN, TOKEN, TokenCyberSoft, TOKEN_CYBERSOFT } from '../util/settings
 
 export class baseService {
     constructor() {
-        this.http = Axios.create({
+        this.https = Axios.create({
             baseURL: DOMAIN,
             timeout: 30000,
         })
-        this.http.interceptors.request.use((config) => {
+        this.https.interceptors.request.use((config) => {
             config.headers = {
                 ...config.headers,
                 'accept': 'application/json',
@@ -44,7 +44,7 @@ export class baseService {
 
     get = (url) => {
         console.log(url)
-        return this.http.get(url);
+        return this.https.get(url);
     }
 
     delete = (url) => {

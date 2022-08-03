@@ -1,4 +1,4 @@
-export const DOMAIN = 'http://movienew.cybersoft.edu.vn';
+export const DOMAIN = 'https://movienew.cybersoft.edu.vn';
 export const TOKEN = 'accessToken';
 export const GROUPID = 'GP01';
 export const TYPE_USER = 'TYPE_USER';
